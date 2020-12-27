@@ -11,6 +11,7 @@ import tech.lowspeccorgi.desertexpansion.blocks.ModBlocks;
 import tech.lowspeccorgi.desertexpansion.creativeTabs.DesertExpansionTab;
 import tech.lowspeccorgi.desertexpansion.items.ModItems;
 import tech.lowspeccorgi.desertexpansion.recipies.ModRecipes;
+import tech.lowspeccorgi.desertexpansion.worldGen.ModGens;
 
 @Mod(modid = DesertExpansionMod.MODID, name = DesertExpansionMod.NAME, version = DesertExpansionMod.VERSION)
 public class DesertExpansionMod
@@ -38,6 +39,7 @@ public class DesertExpansionMod
     {
         logger.info(MODID + " :init");
         ModRecipes.init();
+        ModGens.init();
     }
 
     @EventHandler
