@@ -1,5 +1,6 @@
 package tech.lowspeccorgi.desertexpansion.items;
 
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -9,26 +10,31 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import tech.lowspeccorgi.desertexpansion.DesertExpansionMod;
 
+import java.util.ArrayList;
+
 @Mod.EventBusSubscriber(modid = DesertExpansionMod.MODID)
 public class ModItems
 {
-    static Item hardenedSandIngot;
+    public static ArrayList<Item> ITEMS = new ArrayList<Item>();
+
+    /* Declare items here, items auto register as well */
+    public static final Item hardenedSandIngot = new ItemBase("hardenedSandIngot");;
 
     public static void init()
     {
-        hardenedSandIngot = new ItemBase("hardenedSandIngot");
+        // Todo.
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event)
     {
-        event.getRegistry().registerAll(hardenedSandIngot);
+        ITEMS.forEach(element -> event.getRegistry().register(element));
     }
 
     @SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event)
     {
-        registerRender(hardenedSandIngot);
+        ITEMS.forEach(element -> registerRender(element));
     }
 
     private static void registerRender(Item item)
@@ -36,6 +42,7 @@ public class ModItems
         ModelLoader.setCustomModelResourceLocation(
                 item,
                 0,
-                new ModelResourceLocation(item.getRegistryName(), ""));
+                new ModelResourceLocation(item.getRegistryName(), "inventory"));
     }
 }
+

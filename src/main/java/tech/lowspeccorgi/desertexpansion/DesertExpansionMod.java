@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
+import tech.lowspeccorgi.desertexpansion.blocks.ModBlocks;
 import tech.lowspeccorgi.desertexpansion.creativeTabs.DesertExpansionTab;
 import tech.lowspeccorgi.desertexpansion.items.ModItems;
 
@@ -30,6 +31,8 @@ public class DesertExpansionMod
         logger = event.getModLog();
         logger.info(MODID + " :preInit");
         ModItems.init();
+        ModBlocks.init();
+        ModBlocks.init();
     }
 
     @EventHandler
