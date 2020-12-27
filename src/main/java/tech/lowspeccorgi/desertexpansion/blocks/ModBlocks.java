@@ -11,6 +11,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import tech.lowspeccorgi.desertexpansion.DesertExpansionMod;
+import tech.lowspeccorgi.desertexpansion.items.ModItems;
 
 import java.util.ArrayList;
 
@@ -20,7 +21,7 @@ public class ModBlocks
     public static ArrayList<Block> BLOCKS = new ArrayList<Block>();
 
     /* Declare blocks here, items auto register as well */
-    public static final Block hardenedSand = new BlockBase("hardenedSand", Material.ROCK);
+    public static final Block hardenedSand = new BlockOre("hardenedSand", Material.ROCK, ModItems.hardenedSandIngot, 1, 5).setHardness(3.0f);
 
     public static void init()
     {
