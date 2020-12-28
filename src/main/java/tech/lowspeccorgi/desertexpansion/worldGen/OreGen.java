@@ -16,6 +16,12 @@ import java.util.Random;
 import com.google.common.base.Predicate;
 
 public class OreGen implements IWorldGenerator {
+
+    public OreGen()
+    {
+        ModGens.WORLD_GENS.add(this);
+    }
+
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
     {
@@ -23,13 +29,10 @@ public class OreGen implements IWorldGenerator {
         {
             // Nether
             case -1:
-                if (world.provider.getBiomeProvider().getBiome(new BlockPos(chunkX, 0, chunkZ)).equals(Biome.getBiome(2)))
-                {
-                    runGenerator(ModBlocks.hardenedSand.getDefaultState(), 7, 80, 12, 50, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
-                }
+                break;
             // Overworld
             case 0:
-                break;
+                runGenerator(ModBlocks.hardenedSand.getDefaultState(), 7, 255, 10, 50, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
             // End
             case 1:
                 break;
