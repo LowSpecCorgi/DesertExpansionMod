@@ -31,9 +31,9 @@ public class OreGen implements IWorldGenerator {
                 break;
             // Overworld
             case 0:
-                // Extra sand gen, as not enough sand spawns in caves
                 if (world.provider.getBiomeProvider().getBiome(new BlockPos(chunkX, 0, chunkZ)).getBiomeName() == "Desert")
                 {
+                    // Extra sand gen pass, as nowhere near enough sand spawns in the desert caves
                     runGenerator(Blocks.SAND.getDefaultState(), 7, 255, 10, 50, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
                     runGenerator(ModBlocks.hardenedSand.getDefaultState(), 7, 80, 10, 50, BlockMatcher.forBlock(Blocks.SAND), world, random, chunkX, chunkZ);
                 }

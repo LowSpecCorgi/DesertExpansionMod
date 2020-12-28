@@ -22,9 +22,6 @@ public class DesertExpansionMod
 
     public static Logger logger;
 
-    /* CREATIVE TABS */
-    public static final CreativeTabs desertExpansionTab = new DesertExpansionTab("tabDesertExpansion");
-
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {

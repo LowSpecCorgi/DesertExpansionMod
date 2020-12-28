@@ -1,13 +1,11 @@
 package tech.lowspeccorgi.desertexpansion.items;
 
-import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 import tech.lowspeccorgi.desertexpansion.creativeTabs.ModTabs;
 
-
-public class ItemBase extends Item
-{
-    public ItemBase(String name)
-    {
+public class FoodBase extends ItemFood {
+    public FoodBase(String name, int amount, float saturation, boolean isWolfFood) {
+        super(amount, saturation, isWolfFood);
         setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(ModTabs.desertExpansionTab);

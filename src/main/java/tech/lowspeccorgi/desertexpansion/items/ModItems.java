@@ -19,6 +19,7 @@ public class ModItems
 
     /* Declare items here, items auto register as well */
     public static final Item hardenedSandIngot = new ItemBase("hardenedSandIngot");;
+    public static final DehydratedFlesh dehydratedFlesh = new DehydratedFlesh("dehydratedFlesh", 5, 0.3f, false);
 
     public static void init()
     {
