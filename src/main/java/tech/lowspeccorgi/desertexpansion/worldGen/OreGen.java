@@ -5,7 +5,6 @@ import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.*;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -32,7 +31,12 @@ public class OreGen implements IWorldGenerator {
                 break;
             // Overworld
             case 0:
-                runGenerator(ModBlocks.hardenedSand.getDefaultState(), 7, 255, 10, 50, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
+                // Extra sand gen, as not enough sand spawns in caves
+                if (world.provider.getBiomeProvider().getBiome(new BlockPos(chunkX, 0, chunkZ)).getBiomeName() == "Desert")
+                {
+                    runGenerator(Blocks.SAND.getDefaultState(), 7, 255, 10, 50, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
+                    runGenerator(ModBlocks.hardenedSand.getDefaultState(), 7, 80, 10, 50, BlockMatcher.forBlock(Blocks.SAND), world, random, chunkX, chunkZ);
+                }
             // End
             case 1:
                 break;
