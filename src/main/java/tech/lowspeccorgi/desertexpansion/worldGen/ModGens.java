@@ -10,11 +10,12 @@ public class ModGens {
 
     /* Declare world gens here */
     public static final OreGen oreGen = new OreGen();
+    public static final StructureGen structureGen = new StructureGen();
 
     public static void init()
     {
         WORLD_GENS.forEach(element -> {
-            GameRegistry.registerWorldGenerator(oreGen, 0);
+            GameRegistry.registerWorldGenerator(element, 0);
         });
     }
 }

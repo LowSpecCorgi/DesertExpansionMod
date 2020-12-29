@@ -19,7 +19,7 @@ public class DehydratedFlesh extends FoodBase
     {
         if (!worldIn.isRemote)
         {
-            player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 60 * 20, 5, false, true));
+            player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 60 * 5, 5, false, true));
         }
     }
 

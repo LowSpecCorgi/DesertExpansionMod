@@ -1,6 +1,5 @@
 package tech.lowspeccorgi.desertexpansion;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -8,7 +7,6 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 import tech.lowspeccorgi.desertexpansion.blocks.ModBlocks;
-import tech.lowspeccorgi.desertexpansion.creativeTabs.DesertExpansionTab;
 import tech.lowspeccorgi.desertexpansion.items.ModItems;
 import tech.lowspeccorgi.desertexpansion.recipies.ModRecipes;
 import tech.lowspeccorgi.desertexpansion.worldGen.ModGens;
